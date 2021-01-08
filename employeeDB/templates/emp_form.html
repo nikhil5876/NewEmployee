@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+You are in form page ......
+
+
+<br>
+<div class="jumbotron">
+    <h1 class="display-4">Employee Registration..</h1>
+    <p class="lead">You can make registration of your employee here. </p>
+    <hr class="my-4">
+    <form action="" method="post" autocomplete="off">
+
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col col-mid-6">
+                {{form.eName | as_crispy_field }}
+            </div>
+            <div class="col col-mid-6">
+                {{form.eLastName | as_crispy_field }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-mid-6">
+                {{form.eMobNo | as_crispy_field }}
+            </div>
+            <div class="col col-mid-6">
+                {{form.eEmail | as_crispy_field }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{form.eGroup | as_crispy_field }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-mid-6">
+                
+                {{form.eAddress | as_crispy_field }}
+            </div>
+            <div class="col col-mid-6">
+                {{form.eDateOfRenewable | as_crispy_field }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{form.eExtraInfo | as_crispy_field }}
+            </div>
+        </div>
+
+      
+        
+        
+        
+        
+        
+            
+        
+ 
+        
+        
+
+
+
+        <!-- {{ form | crispy }} -->
+        <button type="submit" class = "btn btn-success"> Submit</button>
+    
+    </form>
+    
+    <p class="lead">
+     
+    </p>
+  </div>
+
+
+
+
+{% endblock %}

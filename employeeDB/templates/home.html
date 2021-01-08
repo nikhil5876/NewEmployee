@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<pre>
+    You are in Home page.
+    This is list of employee..
+    
+</pre>
+
+
+
+<br>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Employee ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Mob No.</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+
+        {% for emp in emp_list %}
+        <tr>
+            <th scope="row">{{emp.employeeID}}</th>
+            <td>{{emp.eName}}</td>
+            <td>{{emp.eLastName}}</td>
+            <td>{{emp.eMobNo}}</td>
+            <td>
+                <a href="{% url 'employee_update' emp.employeeID %}" class="btn text-secondary px-0">
+                     <i class="far fa-edit fa-lg"></i> 
+                
+
+                </a>
+            </td>
+          </tr>
+
+
+        
+         
+        
+        
+        <hr>
+    {% endfor %}
+
+      
+     
+    </tbody>
+  </table>
+
+
+<!-- 
+{% for emp in emp_list %}
+
+
+    {{emp.employeeID}}
+    {{emp.eName}} 
+    {{emp.eLastName}}
+    {{emp.eMobNo}} {{emp.eEmail}} {{emp.eAddress}} {{emp.eGroup}} {{emp.eExtraInfo}} {{emp.eDateOfRenewable}}
+    <hr>
+{% endfor %} -->
+
+
+{% endblock %}
